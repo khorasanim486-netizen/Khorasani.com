@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>دو زنگ سیاه و سفید - تو خالی و پر</title>
+    <style>
+        /* پس‌زمینه تیره برای دیده شدن خطوط سفید */
+        body {
+            background-color: #1e1e1e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px; /* فاصله بین دو زنگ */
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* سایز کلی هر زنگ */
+        .bell-container {
+            width: 160px;
+            height: 160px;
+        }
+
+        .bell-svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* تنظیمات مشترک خطوط */
+        .bell-body, .bell-top, .bell-clapper {
+            stroke-width: 3;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* ★★★ زنگ اول: تو خالی (Hollow) ★★★ */
+        .bell-hollow .bell-body,
+        .bell-hollow .bell-top,
+        .bell-hollow .bell-clapper {
+            fill: none;          /* داخل کاملاً خالی (شفاف) */
+            stroke: #ffffff;     /* خط دور سفید */
+        }
+
+        /* ★★★ زنگ دوم: پر (Filled) ★★★ */
+        .bell-filled .bell-body {
+            fill: #000000;       /* داخل مشکی */
+            stroke: #ffffff;     /* خط دور سفید */
+        }
+        .bell-filled .bell-top {
+            fill: #000000;       /* داخل مشکی */
+            stroke: #ffffff;
+        }
+        .bell-filled .bell-clapper {
+            fill: #ffffff;       /* پلاک پایین سفید */
+            stroke: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ① زنگ سمت راست: تو خالی (Hollow) -->
+    <div class="bell-container bell-hollow">
+        <svg class="bell-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <!-- دستگیره بالای زنگ -->
+            <circle class="bell-top" cx="50" cy="12" r="4" />
+            <!-- بدنه زنگ -->
+            <path class="bell-body" d="M 50 20 C 30 20, 22 35, 22 50 L 18 75 C 18 78, 20 80, 23 80 L 77 80 C 80 80, 82 78, 82 75 L 78 50 C 78 35, 70 20, 50 20 Z" />
+            <!-- پلاک پایین -->
+            <circle class="bell-clapper" cx="50" cy="86" r="5" />
+        </svg>
+    </div>
+
+    <!-- ② زنگ سمت چپ: پر (Filled) -->
+    <div class="bell-container bell-filled">
+        <svg class="bell-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <!-- دستگیره بالای زنگ -->
+            <circle class="bell-top" cx="50" cy="12" r="4" />
+            <!-- بدنه زنگ -->
+            <path class="bell-body" d="M 50 20 C 30 20, 22 35, 22 50 L 18 75 C 18 78, 20 80, 23 80 L 77 80 C 80 80, 82 78, 82 75 L 78 50 C 78 35, 70 20, 50 20 Z" />
+            <!-- پلاک پایین -->
+            <circle class="bell-clapper" cx="50" cy="86" r="5" />
+        </svg>
+    </div>
+
+</body>
+</html>
